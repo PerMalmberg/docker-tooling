@@ -8,5 +8,5 @@ else
     docker run --rm \
                --mount type=bind,source="$1",target="/cfg" \
                --mount type=bind,source="$2",target="/src" \
-               permalmberg/uncrustify:latest
+               permalmberg/uncrustify:0.70.0
 fi

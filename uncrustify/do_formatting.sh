@@ -5,7 +5,8 @@ find /src -name "*.hpp" >> /src/files_to_check.txt
 find /src -name "*.c" >> /src/files_to_check.txt
 find /src -name "*.h" >> /src/files_to_check.txt
 
-/uncrustify -c /cfg/uncrustify.cfg --check -F /src/files_to_check.txt
+/uncrustify --version
+/uncrustify -c /cfg/uncrustify.cfg --if-changed --replace --no-backup -F /src/files_to_check.txt
 code=$?
 
 if [ -f /src/files_to_check.txt ]; then
